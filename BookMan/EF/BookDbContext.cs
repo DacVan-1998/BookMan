@@ -16,13 +16,7 @@ namespace BookMan.EF
         }
 
         public DbSet<Book> Books { get; set; }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-
-            base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer(con_str);           // thiết lập làm việc với SqlServer
-
-        }
+       
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Book>().HasData(
